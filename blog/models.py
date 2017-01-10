@@ -1,6 +1,7 @@
 from django.db import models
 from django.utils import timezone
 from django.contrib.auth.models import User
+from django.contrib import admin
 
 class Post(models.Model):
     STATUS_CHOICES = (
@@ -22,3 +23,7 @@ class Post(models.Model):
 
     def __unicode__(self):
         return self.title
+
+class BlogPostAdmin(admin.ModelAdmin):
+    list_display = ('title', 'created')
+
