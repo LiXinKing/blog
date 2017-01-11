@@ -19,7 +19,7 @@ class Post(models.Model):
     choices = STATUS_CHOICES, default = 'draft')
 
     class Meta:
-        ordering = ('-publish',)
+        ordering = ('-created',)
 
     def __unicode__(self):
         return self.title
